@@ -1,0 +1,14 @@
+[Unit]
+Description=demo fastapi apllication
+After=network.target
+
+[Service]
+User=muthuvel
+Group=muthuvel
+WorkingDirectory=/home/muthuvel/app/src/
+Environment="Path=/home/muthuvel/app/venv/bin"
+EnvironmentFile=/home/muthuvel/.env
+ExecStart=/home/muthuvel/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target

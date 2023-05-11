@@ -37,4 +37,4 @@ async def create_jwt():
     to_encode = {"sub": "123"}
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     encoded_refresh = jwt.encode(to_encode, SECRET_KEY_REFRESH, algorithm=ALGORITHM)
-    return {"token": encoded_jwt, "refresh_token":encoded_refresh}
+    return {"token": encoded_jwt, "refresh_token":encoded_refresh, "message":"Hello World"}
