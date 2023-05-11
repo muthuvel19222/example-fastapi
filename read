@@ -1,0 +1,18 @@
+alembic revision -m "create post table" 
+
+alembic upgrade b4c735f3e720 
+
+alembic revision -m "add content column for  post table" 
+
+(alembic current
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+b4c735f3e720)
+
+alembic upgrade 3abe4bfe2bb1(revision_number) or heads or +1 or +2
+alembic downgrade 3abe4bfe2bb1(down_revision) or -1 or -2
+
+alembic revision -m "create user table"
+
+
+alembic revision --autogenerate -m "auto-vote generated"
